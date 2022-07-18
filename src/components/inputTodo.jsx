@@ -1,11 +1,21 @@
 import React from "react";
 
+const style = {
+  backgroundColor: '#c1ffff',
+  width: '400px',
+  height: '30px',
+  padding: '8px',
+  margin: '8px',
+  borderRadius: '8px'
+}
+
+
 export const InputTodo = (props) => {
-  const {todoText, onChange, onClick} = props;
+  const {todoText, onChange, onClick, disabled} = props;
   return (
-  <div className="input-area">
-    <input type="text" placeholder="TODOを入力" value={todoText} onChange={onChange} />
-    <button onClick={onClick}>追加</button>
+  <div style={style}>
+    <input type="text" placeholder="TODOを入力" value={todoText} onChange={onChange} disabled={disabled}/>
+    <button onClick={onClick} disabled={disabled}>追加</button>
   </div>   
   );
 };
